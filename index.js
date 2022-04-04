@@ -8,6 +8,9 @@ const categoriesController = require("./categories/categoriesController");
 const articlesController = require("./articles/articlesController");
 
 
+const Article = require("./articles/Article");
+const Category = require("./categories/Category");
+
 
 //Setando View Engine para EJS
 app.set('view engine', 'ejs');
