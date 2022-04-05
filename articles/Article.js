@@ -17,9 +17,11 @@ const Article = connection.define('articles', {
     }
 })
 
-Article.sync({force: true})
+Article.belongsTo(Category, {
+    constraint: false,
+    foreignKey: {name:'idCategory', allowNull: false},
+    allowNull: false
+})
 
-Article.belongsTo(Category); //Um artigo tem uma Categoria
-Category.hasMany(Article); // Uma Categoria tem vários Artigos
 
 module.exports = Article;
